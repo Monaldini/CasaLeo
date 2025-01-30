@@ -1,0 +1,6 @@
+package enums;
+
+public enum RawMaterialsCategory {
+	BEVERAGES, WINES, BEERS, SPIRITS, CEREALS, TUBERS, FRUITS, VEGETABLES, MEATS, FISH, LEGUMES, EGGS, DAIRY, FATS
+}
+
