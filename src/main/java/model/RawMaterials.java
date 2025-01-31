@@ -1,70 +1,85 @@
 package model;
 
-
-
-import java.util.Locale.Category;
-
-import org.springframework.data.annotation.Id;
-
+import enums.Measures;
+import enums.RawMaterialsCategory;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "raw_material")
+@Table(name = "raw_materials")
 public class RawMaterials {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@Column(nullable = false, unique = true)
+	private String name;
 
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private Measures unit;
+	
+	public RawMaterials() {}
+	
+	@Column
+	private double quantity;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private RawMaterialsCategory category;
 
-@Column(nullable = false)
-private String name;
+	public RawMaterials(String name, double quantity, Measures unit, RawMaterialsCategory category) {
+		this.name = name;
+		this.quantity = quantity;
+		this.unit = unit;
+		this.category = category;
+	}
 
-@Column
-private double quantity;
+	public long getId() {
+		return id;
+	}
 
-@Enumerated(EnumType.STRING)
-@Column(nullable = false)
-private Category category;
+	public void setId(long id) {
+		this.id = id;
+	}
 
-public RawMaterials() {}
+	public String getName() {
+		return name;
+	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
+	public Measures getUnit() {
+		return unit;
+	}
 
-public String getName() {
-	return name;
+	public void setUnit(Measures unit) {
+		this.unit = unit;
+	}
+
+	public double getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(double quantity) {
+		this.quantity = quantity;
+	}
+
+	public RawMaterialsCategory getCategory() {
+		return category;
+	}
+
+	public void setCategory(RawMaterialsCategory category) {
+		this.category = category;
+	}
+
 }
-
-public void setName(String name) {
-	this.name = name;
-}
-
-public double getQuantity() {
-	return quantity;
-}
-
-public void setQuantity(double quantity) {
-	this.quantity = quantity;
-}
-
-
-
-public RawMaterials( String name, double quantity, Category category) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.quantity = quantity;
-	this.category = category;
-}
-
-
-
-}
-
-
