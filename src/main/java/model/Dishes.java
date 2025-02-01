@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 public class Dishes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long id_dish;
 	@Column(nullable = false, unique = true)
 	private String name;
 	@Column(nullable = false)
@@ -27,22 +27,32 @@ public class Dishes {
 	
 	public Dishes() {}
 
-	public Dishes(long id, String name, double price, DishCategory category, String description) {
-		this.id = id;
+	public Dishes( String name, double price, DishCategory category, String description) {
 		this.name = name;
 		this.price = price;
 		this.category = category;
 		this.description = description;
 	}
 
-	public long getId() {
-		return id;
+	
+
+	public long getId_dish() {
+		return id_dish;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setId_dish(long id_dish) {
+		this.id_dish = id_dish;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	
 	public String getName() {
 		return name;
 	}
@@ -67,13 +77,7 @@ public class Dishes {
 		this.category = category;
 	}
 
-	public String getDescritpion() {
-		return description;
-	}
 
-	public void setDescritpion(String descritpion) {
-		this.description = descritpion;
-	}
 	
 	
 	

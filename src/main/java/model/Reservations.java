@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class Reservations {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int id_reservation;
 	@Column(nullable = false)
 	private String customerName;
 	@Column(nullable = false)
@@ -28,14 +28,23 @@ public class Reservations {
 
 	public Reservations() {
 	}
+	
 
-	public int getId() {
-		return id;
+	
+
+	public int getId_reservation() {
+		return id_reservation;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+
+
+
+	public void setId_reservation(int id_reservation) {
+		this.id_reservation = id_reservation;
 	}
+
+
+
 
 	public String getCustomerName() {
 		return customerName;
@@ -77,10 +86,10 @@ public class Reservations {
 		this.reservationTime = reservationTime;
 	}
 
-	public Reservations(int id, String customerName, String customerLastname, String phoneNumber, int seats,
+	public Reservations( String customerName, String customerLastname, String phoneNumber, int seats,
 			LocalDateTime reservationTime) {
 
-		this.id = id;
+	
 		this.customerName = customerName;
 		this.customerLastname = customerLastname;
 		this.phoneNumber = phoneNumber;

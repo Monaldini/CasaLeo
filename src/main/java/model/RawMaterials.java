@@ -17,7 +17,7 @@ public class RawMaterials {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long id_RawMaterial;
 	
 	@Column(nullable = false, unique = true)
 	private String name;
@@ -42,12 +42,12 @@ public class RawMaterials {
 		this.category = category;
 	}
 
-	public long getId() {
-		return id;
+	public long getId_RawMaterial() {
+		return id_RawMaterial;
 	}
 
 	public void setId(long id) {
-		this.id = id;
+		this.id_RawMaterial = id;
 	}
 
 	public String getName() {
