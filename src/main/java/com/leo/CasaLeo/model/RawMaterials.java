@@ -1,7 +1,8 @@
-package model;
+package com.leo.CasaLeo.model;
 
-import enums.Measures;
-import enums.RawMaterialsCategory;
+import com.leo.CasaLeo.enums.Measures;
+import com.leo.CasaLeo.enums.RawMaterialsCategory;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

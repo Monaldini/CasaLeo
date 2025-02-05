@@ -1,6 +1,7 @@
-package model;
+package com.leo.CasaLeo.model;
 
-import enums.DishCategory;
+import com.leo.CasaLeo.enums.DishCategory;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

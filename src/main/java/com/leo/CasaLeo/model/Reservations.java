@@ -1,4 +1,4 @@
-package model;
+package com.leo.CasaLeo.model;
 
 import java.time.LocalDateTime;
 
