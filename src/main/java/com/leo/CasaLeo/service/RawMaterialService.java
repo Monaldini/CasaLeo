@@ -16,6 +16,11 @@ public class RawMaterialService {
 	@Autowired
 	private RawMaterialRepo repository ;
 	
+	public void addRawMaterial () {
+		
+		} 
+	}
+	
 	
 	
 
