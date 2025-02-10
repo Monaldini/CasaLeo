@@ -39,6 +39,20 @@ public class RawMaterialsDto {
 	public void setCategory(RawMaterialsCategory category) {
 		this.category = category;
 	}
+	@Override
+	public String toString() {
+		return "RawMaterialsDto [name=" + name + ", unit=" + unit + ", quantity=" + quantity + ", category=" + category
+				+ "]";
+	}
+	
+	public RawMaterialsDto(String name,RawMaterialsCategory category , double quantity, Measures unit) {
+		super();
+		this.name = name;
+		this.unit = unit;
+		this.quantity = quantity;
+		this.category = category;
+	}
+	
 	
 
 }
