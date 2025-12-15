@@ -12,7 +12,7 @@
 	<artifactId>auth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>auth</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Servizio destinato alla gestione dell'autenticazione</description>
 	<url/>
 	<licenses>
 		<license/>

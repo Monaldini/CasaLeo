@@ -1,13 +1,14 @@
-spring:
-  application:
-    name: auth
 server:
   port: 8081
 
+spring:
+  application:
+    name: auth-service
+
   datasource:
-    url: jdbc:postgresql://localhost:5432/authdb
-    username: auth_user
-    password: auth_password
+    url: jdbc:postgresql://localhost:5432/casaleo_auth
+    username: postgres
+    password: password
     driver-class-name: org.postgresql.Driver
 
   jpa:
