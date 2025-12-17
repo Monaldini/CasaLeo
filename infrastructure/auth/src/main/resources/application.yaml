@@ -6,7 +6,7 @@ spring:
     name: auth-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/casaleo_auth
+    url: jdbc:postgresql://localhost:5433/casaleo_auth
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
@@ -21,3 +21,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+jwt:
+  secret: casaleo-super-secret-key
+  token:
+    validity: 3600000
+

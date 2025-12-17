@@ -3,13 +3,17 @@ package it.casaleo.auth.util;
 import io.jsonwebtoken.*;
 import it.casaleo.auth.exception.JwtTokenMalformedException;
 import it.casaleo.auth.exception.JwtTokenMissingException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.Optional;
 
 @Component
 public class JwtUtil {
+    private static final Logger log = LoggerFactory.getLogger(JwtUtil.class);
 
     @Value("${jwt.secret}")
     private String jwtSecret;
@@ -17,18 +21,18 @@ public class JwtUtil {
     @Value("${jwt.token.validity}")
     private long tokenValidity;
 
-    public Claims getClaims(final String token) {
+    public Optional<Claims> getClaims(final String token) {
         try {
             Claims body = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();
-            return body;
+            return Optional.of(body);
         } catch (Exception e) {
-            System.out.println(e.getMessage() + " => " + e);
+            log.error("Errore parsing JWT", e);
         }
-        return null;
+        return Optional.empty();
     }
 
-    public String generateToken(String id) {
-        Claims claims = Jwts.claims().setSubject(id);
+    public String generateToken(String subject) {
+        Claims claims = Jwts.claims().setSubject(subject);
         long nowMillis = System.currentTimeMillis();
         long expMillis = nowMillis + tokenValidity;
         Date exp = new Date(expMillis);
