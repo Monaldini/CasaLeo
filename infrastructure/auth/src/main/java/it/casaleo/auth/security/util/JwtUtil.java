@@ -1,4 +1,4 @@
-package it.casaleo.auth.util;
+package it.casaleo.auth.security.util;
 
 import io.jsonwebtoken.*;
 import it.casaleo.auth.exception.JwtTokenMalformedException;
